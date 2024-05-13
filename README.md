@@ -1,8 +1,4 @@
-# Procress-aware-transaction-ordering
-
-The dataset used in the paper is found in the folder paper_dataset under the format: [setup][maliciousNodes][bufferingLength][epochs][attackType].
-
-Example: oc_1_2_150_r, ordering contract with one malicious node and 2 buffering blocks with a suppression attack.
+The dataset used in the paper is found in the directory paper_dataset.
 
 ## Dependencies 
 
@@ -14,25 +10,33 @@ cd src | npm install
 ## Setup the network
 
 ```sh
-./setup-network.sh [Number of nodes]
+./setup-network.sh 5
 ```
-A new network will be initialized with the QBFT consensus protocol. 
-## Start a node
+A new network will be initialized with the QBFT consensus protocol with 5 nodes.
 
-Each node is correspondent to a buyer.
+## Start the network
 
-quorum: honest node |
-quorumal: displacement node |
-quorumal_del: suppression node
+Each node corresponds to a participant in the choreography.
+
+Modes:
+quorum: honest mode |
+quorumal: displacement mode |
+quorumal_del: suppression mode
 
 In a new terminal:
 ```sh
-./start-member.sh [Node-0, Node-1, ...] [quorum | quorumal | quorumal_del]
+./start-network.sh [mode]
+```
+
+## Stop the network
+
+```sh
+./stop-network.sh
 ```
 
 ## Deploy contracts
 
-Nodes need to be started before deploying contracts
+Network needs to be started before deploying contracts
 
 ```sh
 ./deploy-contract.sh
@@ -50,13 +54,13 @@ node event_generate.js
 
 ### Plain Setup
 ```sh
-node interact_plain.js
+node interact_plain_process.js
 ```
 
 ### OC Setup
 
 ```sh
-node interact_ordering.js
+node interact_ordering_proces.js
 ```
 
 ### References
