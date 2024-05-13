@@ -1,0 +1,8 @@
+/QBFT-Network
+node_modules
+*.bin-runtime
+*.pdf
+.DS_Store
+.ipynb_checkpoints/
+.vscode
+/truffle/build
