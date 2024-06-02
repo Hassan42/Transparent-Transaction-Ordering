@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 echo "Setting up network..."
 
@@ -18,7 +18,7 @@ mkdir ${parent_path}/QBFT-Network
 
 cd ${parent_path}/QBFT-Network
 
-OUTPUT=$(npx quorum-genesis-tool --consensus qbft --chainID 1337 --blockperiod 1 --emptyBlockPeriod 1 --requestTimeout 10 --epochLength 30000 --difficulty 1 --gasLimit '0xFFFFFF' --coinbase '0x0000000000000000000000000000000000000000' --validators ${NODES_NB} --members 0 --bootnodes 0 --outputPath 'artifacts' | grep "artifacts/" | cut -d ' ' -f4)
+OUTPUT=$(yes | npx quorum-genesis-tool --consensus qbft --chainID 1337 --blockperiod 1 --emptyBlockPeriod 1 --requestTimeout 10 --epochLength 30000 --difficulty 1 --gasLimit '0xFFFFFF' --coinbase '0x0000000000000000000000000000000000000000' --validators ${NODES_NB} --members 0 --bootnodes 0 --outputPath 'artifacts' | grep "artifacts/" | cut -d ' ' -f4)
 
 mv ${OUTPUT}/* artifacts
 

@@ -5,6 +5,7 @@ The dataset used in the paper is found in the directory paper_dataset.
 ```sh
 npm install -g truffle
 cd src | npm install
+./build-quorum.sh
 ```
 
 ## Setup the network

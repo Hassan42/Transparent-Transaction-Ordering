@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 NODE=$1
 GETH_PATH=$2

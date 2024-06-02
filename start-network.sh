@@ -13,10 +13,6 @@ alloc=$(jq -r '.alloc' "$GENSIS")
 buyer2_address=$(echo "$alloc" | jq -r 'keys_unsorted[]' | sed -n '2p')
 log1_address=$(echo "$alloc" | jq -r 'keys_unsorted[]' | sed -n '4p')
 
-
-# Array to store process IDs
-PIDS=()
-
 for ((i=0; i<$NUM_INSTANCES; i++)); do
 
     if [ "$i" -eq 0 ]; then
@@ -30,10 +26,7 @@ for ((i=0; i<$NUM_INSTANCES; i++)); do
     fi
 
     ./start-validator.sh "Node-$i" "$ARGUMENT" &> /dev/null &
-    
-    # Store process ID of the last command (geth instance)
-    PIDS+=($!)
-    
+        
     sleep 5
 
     echo ">Node-$i Started."
