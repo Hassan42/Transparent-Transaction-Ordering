@@ -6,6 +6,6 @@ node_modules
 .ipynb_checkpoints/
 .vscode
 /truffle/build
-/quorum/build
-/quorumal/build
-/quorumal_del/build
+/quorum/build/bin
+/quorumal/build/bin
+/quorumal_del/build/bin
