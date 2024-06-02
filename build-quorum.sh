@@ -13,7 +13,7 @@ build_project() {
         echo "Directory ${project_path} not found. Exiting."
         exit 1
     }
-    make all &> /dev/null &
+    make all
 }
 
 # Build each project

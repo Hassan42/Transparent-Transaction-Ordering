@@ -25,7 +25,7 @@ for ((i=0; i<$NUM_INSTANCES; i++)); do
         ARGUMENT="quorum"
     fi
 
-    ./start-validator.sh "Node-$i" "$ARGUMENT" &> /dev/null &
+    ./start-validator.sh "Node-$i" "$ARGUMENT" 
         
     sleep 5
 
